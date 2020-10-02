@@ -1,2 +1,2 @@
 language = "python3"
-run = "python src/checkCredentials.py"
+run = "python src/basics.py"

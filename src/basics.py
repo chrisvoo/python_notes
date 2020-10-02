@@ -1,4 +1,5 @@
-# Numbers
+print("Numbers\n" + "-" * 50)
+
 # https://docs.python.org/3.8/library/stdtypes.html#numeric-types-int-float-complex
 print(type(2 + 4))   # int
 print(type(6 * .3))  # float
@@ -10,7 +11,8 @@ print(type(6 // 5))  # int, rounds down to nearest whole number
 print(round(5.3))    # to the nearest int
 print(abs(-5.6))     # absolute value
 
-# Variables
+print("\nVariables\n" + "-" * 50)
+
 a, b = 3, 5.4        # multiple assignments shortcut
 print(b)
 
@@ -18,7 +20,8 @@ print(b)
 a = 5; b = 6; c = a; a = 9   
 print(c)             # still 5, passed by value, not reference (immutable objects)
 
-# Strings
+print("\nStrings\n" + "-" * 50)
+
 longString = '''
 This is 
 a long 
@@ -40,4 +43,49 @@ print('Hi {}, you\'re {} years old'.format(name, age)) # Python 2
 slicing = "I'm a string"
 print(slicing[6:])        # : means till the end, last char excluded
 print(slicing[0:3:2])     # stepover, take a char every two chars in this case
-print(slicing[::-1])      # reverse
+print(slicing[::-1])      # reverse, a new list
+print(' '.join(["A", "string", "concatenation"]))
+
+print("\nLists\n" + "-" * 50)
+
+# They're ordered sequences of objects (a form of array). Lists aren't immutable
+collection = ['apples', 'bananas', 'oranges', 5, 3.4]
+print(collection[1:]) # list slicing, ['bananas', 'oranges', 5, 3.4]
+new_collection = collection
+print(new_collection[0] == collection[0])  # Passed by reference
+# to copy a list, you need to slice it, like collection[:]
+
+# Nested lists
+basket = ["Banana", ["Apples", ["Oranges"], "Blueberries"]];
+print(basket[1][1][0])
+basket.append("Grape")
+basket.extend(["Oranges", "Banana"]) # duplicated item
+print(basket.index("Banana") == 0)
+print(("Banana" in basket) is True)
+
+print("\nUpacking - " + str(basket) + " -\n")
+a, b, *others, d = basket
+print(a)
+print(others)
+print(d) # duplicated item
+
+
+print("\nDictionary\n" + "-" * 50)
+
+# An unordered key-value pairs, whose keys must be unique and immutable (strings, booleans and numbers are valid key types)
+aDict = {
+  "a": 1,
+  "b": "hello",
+  "c": [1, 2],
+  123: 'By number'
+}
+
+print(aDict[123])
+print(aDict.get("age", 39)) # Default value if age does not exist
+print("a" in aDict) # check keys
+print("hello" in aDict.values())
+aDict.update({
+  "newItem": "hey",
+  "a": 2
+})
+print(aDict.items())
