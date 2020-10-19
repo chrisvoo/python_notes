@@ -70,9 +70,9 @@ print(others)
 print(d) # duplicated item
 
 
+# An unordered key-value pairs, whose keys must be unique and immutable (strings, booleans and numbers are valid key types)
 print("\nDictionary\n" + "-" * 50)
 
-# An unordered key-value pairs, whose keys must be unique and immutable (strings, booleans and numbers are valid key types)
 aDict = {
   "a": 1,
   "b": "hello",
@@ -89,3 +89,20 @@ aDict.update({
   "a": 2
 })
 print(aDict.items())
+
+# It's like an immutable list. Items can be accessed by index
+print("\Tuples\n" + "-" * 50)
+my_tuple = (1, 5, "a")
+
+# An order collection of unique objects. It doesn't support indexing, more similar to dictionaries than lists. Conversions to/from lists it's pretty seamless with their respective constructor.
+# Set has many math set methods. Union and intersection can be also applied with | and & 
+print("\Sets\n" + "-" * 50)
+my_set = { 1, "z", 5, 3, "a", 3, 2 }
+my_set.add(4)
+print(my_set) # duplicates silently discarded
+
+
+school = {'Bobby','Tammy','Jammy','Sally','Danny'}
+attendance_list = ['Jammy', 'Bobby', 'Danny', 'Sally']
+# no need to convert here
+print(school.difference(attendance_list))
