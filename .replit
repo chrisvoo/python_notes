@@ -1,2 +1,2 @@
 language = "python3"
-run = "python src/functions.py"
+run = "python src/decorators/index.py"
