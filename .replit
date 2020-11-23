@@ -1,2 +1,2 @@
 language = "python3"
-run = "python src/errors/index.py"
+run = "python src/files/index.py"
